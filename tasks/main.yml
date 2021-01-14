@@ -1,0 +1,32 @@
+---
+
+- name: Remove ntp and ntpstat
+  apt:
+    name: "{{ item }}"
+    state: absent
+    autoremove: true
+    purge: true
+  with_items:
+    - ntp
+    - ntpstat
+
+- name: Setup timesync config
+  template:
+    src: timesyncd.conf.j2
+    dest: /etc/systemd/timesyncd.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: run timedatectl
+  when: ansible_service_mgr == "systemd"
+
+- name: Enable and run systemd-timesyncd
+  systemd:
+    name: systemd-timesyncd.service
+    state: started
+    enabled: yes
+
+- name: Set timezone
+  timezone: name={{ timedatectl_timezone }}
+  when: ansible_service_mgr == "systemd"
+  notify: restart timesyncd

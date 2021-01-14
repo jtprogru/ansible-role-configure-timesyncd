@@ -1,0 +1,18 @@
+# jtprog.configure-timesyncd
+
+Общая роль для настройки systemd-timesyncd
+
+Переменные:
+```yaml
+timedatectl_timeservers: ['0.debian.pool.ntp.org',
+                        '1.debian.pool.ntp.org',
+                        '2.debian.pool.ntp.org',
+                        '3.debian.pool.ntp.org']
+
+timedatectl_timeservers_fallback: ['0.debian.pool.ntp.org',
+                        '1.debian.pool.ntp.org',
+                        '2.debian.pool.ntp.org',
+                        '3.debian.pool.ntp.org']
+
+timedatectl_timezone: Europe/Moscow
+```

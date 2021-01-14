@@ -1,0 +1,25 @@
+galaxy_info:
+  role_name: configure-timesyncd
+  author: Mihael Savin
+  description: Configure systemd-timesyncd
+  company: SysOps
+  license: WTFPL
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - bionic
+    - name: Debian
+      versions:
+        - buster
+
+  galaxy_tags:
+    - timesyncd
+    - systemd
+    - systemd-timesyncd
+    - ubuntu
+    - configure
+
+dependencies: []

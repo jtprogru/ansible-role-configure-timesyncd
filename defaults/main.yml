@@ -1,0 +1,14 @@
+---
+timedatectl_timeservers: ['ntp1.stratum2.ru',
+                          'ntp1.stratum1.ru']
+
+timedatectl_timeservers_fallback: ['0.debian.pool.ntp.org',
+                                   '1.debian.pool.ntp.org',
+                                   '2.debian.pool.ntp.org',
+                                   '3.debian.pool.ntp.org']
+
+timedatectl_timezone: Europe/Moscow
+
+timedatectl_root_distance_max_sec: 5
+timdeatectl_pool_interval_min_sec: 32
+timdeatectl_pool_interval_max_sec: 2048
