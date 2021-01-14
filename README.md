@@ -1,5 +1,8 @@
 # jtprog.configure_timesyncd
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprog/ansible-role-configure-timesyncd/CI?label=CI) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprog/ansible-role-configure-timesyncd/Release?label=Release) ![GitHub](https://img.shields.io/github/license/jtprog/ansible-role-configure-timesyncd)
+
+
 Общая роль для настройки systemd-timesyncd
 
 Переменные:
