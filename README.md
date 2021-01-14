@@ -1,4 +1,4 @@
-# jtprog.configure-timesyncd
+# jtprog.configure_timesyncd
 
 Общая роль для настройки systemd-timesyncd
 
