@@ -2,13 +2,10 @@
 
 - name: Remove ntp and ntpstat
   apt:
-    name: "{{ item }}"
+    name: ['ntp', 'ntpstat']
     state: absent
     autoremove: true
     purge: true
-  with_items:
-    - ntp
-    - ntpstat
 
 - name: Setup timesync config
   template:
