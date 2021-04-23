@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: configure_timesyncd
+  namespace: jtprogru
   author: Mihael Savin
   description: Configure systemd-timesyncd
   company: SysOps

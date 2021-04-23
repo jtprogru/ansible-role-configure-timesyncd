@@ -1,6 +1,6 @@
-# exclude_paths:
-#   - ./my/excluded/directory/
-#   - ./my/other/excluded/directory/
+exclude_paths:
+  - ./.github/
+  - ./molecule/
 #   - ./last/excluded/directory/
 parseable: true
 quiet: true
