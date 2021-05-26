@@ -21,7 +21,7 @@
   systemd:
     name: systemd-timesyncd.service
     state: started
-    enabled: yes
+    enabled: true
 
 - name: Set timezone
   timezone: name={{ configure_timesyncd_timezone }}
