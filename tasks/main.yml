@@ -24,6 +24,6 @@
     enabled: yes
 
 - name: Set timezone
-  timezone: name={{ timedatectl_timezone }}
+  timezone: name={{ configure_timesyncd_timezone }}
   when: ansible_service_mgr == "systemd"
   notify: restart timesyncd

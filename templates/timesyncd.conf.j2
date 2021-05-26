@@ -12,14 +12,14 @@
 # See timesyncd.conf(5) for details.
 
 [Time]
-NTP={% for server in timedatectl_timeservers %}{{ server }} {% endfor %}
+NTP={% for server in configure_timesyncd_timeservers %}{{ server }} {% endfor %}
 
-FallbackNTP={% for server in timedatectl_timeservers_fallback %}{{ server }} {% endfor %}
+FallbackNTP={% for server in configure_timesyncd_timeservers_fallback %}{{ server }} {% endfor %}
 
-#RootDistanceMaxSec={{ timedatectl_root_distance_max_sec }}
+#RootDistanceMaxSec={{ configure_timesyncd_root_distance_max_sec }}
 
-#PollIntervalMinSec={{ timdeatectl_pool_interval_min_sec }}
+#PollIntervalMinSec={{ configure_timesyncd_pool_interval_min_sec }}
 
-#PollIntervalMaxSec={{ timdeatectl_pool_interval_max_sec }}
+#PollIntervalMaxSec={{ configure_timesyncd_pool_interval_max_sec }}
 
 # END FILE
