@@ -6,6 +6,7 @@
     state: absent
     autoremove: true
     purge: true
+  tags: timedatectl
 
 - name: Setup timesync config
   template:
@@ -16,14 +17,17 @@
     mode: 0644
   notify: run timedatectl
   when: ansible_service_mgr == "systemd"
+  tags: timedatectl
 
 - name: Enable and run systemd-timesyncd
   systemd:
     name: systemd-timesyncd.service
     state: started
     enabled: true
+  tags: timedatectl
 
 - name: Set timezone
   timezone: name={{ configure_timesyncd_timezone }}
   when: ansible_service_mgr == "systemd"
   notify: restart timesyncd
+  tags: timedatectl
