@@ -1,21 +1,35 @@
 # jtprogru.configure_timesyncd
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprogru/ansible-role-configure-timesyncd/CI?label=CI) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprogru/ansible-role-configure-timesyncd/Release?label=Release) ![GitHub](https://img.shields.io/github/license/jtprogru/ansible-role-configure-timesyncd)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprogru/ansible-role-configure-timesyncd/CI?label=CI)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprogru/ansible-role-configure-timesyncd/Release?label=Release)
+![GitHub](https://img.shields.io/github/license/jtprogru/ansible-role-configure-timesyncd)
+[![Ansible Role](https://img.shields.io/ansible/role/53230)](https://galaxy.ansible.com/jtprogru/configure_timesyncd/)
+[![GitHub tag](https://img.shields.io/github/tag/jtprogru/ansible-role-configure-timesyncd.svg)](https://github.com/jtprogru/ansible-role-configure-timesyncd/tags)
 
+Simple role for configure systemd-timesyncd
 
-Общая роль для настройки systemd-timesyncd
+## Role Variables
 
-Переменные:
+See [`defaults/main.yml`](defaults/main.yml).
+
+## Example Playbook
+
+Example playbook:
 ```yaml
-timedatectl_timeservers: ['0.debian.pool.ntp.org',
-                        '1.debian.pool.ntp.org',
-                        '2.debian.pool.ntp.org',
-                        '3.debian.pool.ntp.org']
-
-timedatectl_timeservers_fallback: ['0.debian.pool.ntp.org',
-                        '1.debian.pool.ntp.org',
-                        '2.debian.pool.ntp.org',
-                        '3.debian.pool.ntp.org']
-
-timedatectl_timezone: Europe/Moscow
+---
+- name: Configure TimeSyncD
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - jtprogru.configure_timesyncd
 ```
+
+## Author
+
+Michael Savin aka [@jtprogru](https://github.com/jtprogru)
+
+## License
+
+See [LICENSE](LICENSE.md)
+
