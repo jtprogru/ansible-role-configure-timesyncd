@@ -15,7 +15,9 @@
     owner: root
     group: root
     mode: 0644
-  notify: run timedatectl
+  notify:
+    - run timedatectl
+    - restart timesyncd
   when: ansible_service_mgr == "systemd"
   tags: timedatectl
 
